@@ -20,7 +20,7 @@ variable "default_branch" {
 
 # define docker image for build stage
 variable "build_image" {
-  default = "aws/codebuild/docker:18.09.0"
+  default = "aws/codebuild/amazonlinux2-x86_64-standard:3.0"
 }
 
 # define build spec for build stage
@@ -30,7 +30,7 @@ variable "build_spec" {
 
 # define docker image for deploy stage
 variable "deploy_image" {
-  default = "ilya80/rest-service"
+  default = "$ECR_REPO:$COMMIT_HASH"
 }
 
 # define build spec for deploy stage

@@ -26,15 +26,11 @@ This is an example of using Terraform to automate EKS cluster creation and appli
 
 ### Main
 
-`main.tf` defines Terraform version and providers
+`provider.tf` defines Terraform version and providers
 
 `vars.tf` defines variables
 
-### Go Application
 
-The sample Go application repo contains a simple Go hello world app, build specs and Kubernetes deployment specs.
-
-Repo link: [https://github.com/shawnxlw/go-k8s-cicd/]
 
 ## How to use
 
