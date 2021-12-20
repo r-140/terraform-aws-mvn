@@ -52,7 +52,7 @@ resource "aws_codebuild_project" "tf-eks-deploy-staging" {
 
   environment {
     compute_type    = "BUILD_GENERAL1_SMALL"
-    image           = var.deploy_image
+    image           =   "${var.AWS_ACCOUNT_ID}.${var.deploy_image}.${var.AWS_REGION}.amazonaws.com/${var.repo_name}:latest"
     type            = "LINUX_CONTAINER"
     privileged_mode = false
 
@@ -86,7 +86,7 @@ resource "aws_codebuild_project" "tf-eks-deploy-prod" {
 
   environment {
     compute_type    = "BUILD_GENERAL1_SMALL"
-    image           = var.deploy_image
+    image           =   "${var.AWS_ACCOUNT_ID}.${var.deploy_image}.${var.AWS_REGION}.amazonaws.com/${var.repo_name}:latest"
     type            = "LINUX_CONTAINER"
     privileged_mode = false
 

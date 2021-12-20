@@ -8,6 +8,11 @@ variable "AWS_REGION" {
   default = "eu-west-1"
 }
 
+variable "AWS_ACCOUNT_ID" {
+  default = data.aws_caller_identity.current.account_id
+}
+
+
 # CodeCommit and ECR repo name, also as artifact bucket prefix
 variable "repo_name" {
   default = "tf-eks"
@@ -30,7 +35,7 @@ variable "build_spec" {
 
 # define docker image for deploy stage
 variable "deploy_image" {
-  default = "$ECR_REPO:$COMMIT_HASH"
+  default = "dkr.ecr"
 }
 
 # define build spec for deploy stage
