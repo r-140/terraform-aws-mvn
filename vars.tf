@@ -8,11 +8,6 @@ variable "AWS_REGION" {
   default = "eu-west-1"
 }
 
-variable "AWS_ACCOUNT_ID" {
-  default = data.aws_caller_identity.current.account_id
-}
-
-
 # CodeCommit and ECR repo name, also as artifact bucket prefix
 variable "repo_name" {
   default = "tf-eks"
